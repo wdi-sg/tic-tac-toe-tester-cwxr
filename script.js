@@ -6,6 +6,7 @@ $(document).ready(function () {
   var $circle = $('#circle')
 
   var playerClick = $box.on('click', function (event) {
+    // console.log(event.target.id)
     playTurn(event.target.id)
   })
 
@@ -14,11 +15,13 @@ $(document).ready(function () {
       return false
     } else {
       grid[index] = player
+
       if (player === 1) {
         $('#' + index).text('X')
         player = 2    // why ! is not needed? -- if !(player === 1) player = 2
         $('h3').html('Player 2 Turn')
       } else {
+        $('#' + index).text('O')
         player = 1
         $('h3').html('Player 1 Turn')
       }
